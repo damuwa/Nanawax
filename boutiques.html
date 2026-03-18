@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanawax - Nos boutiques</title>
+    <link rel="stylesheet" href="../Css/produit.css">
+    <!-- Police moderne outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Le css-->
+    <style>
+        /* --- Page Boutiques --- */
+        .boutiques-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 5% 80px;
+        }
+    
+        .main-title {
+            font-size: 2.0rem;
+            font-weight: 200;
+            margin-bottom: 50px;
+            /* Aligné avec le début de la colonne de gauche */
+        }
+    
+        /* Grille Web (2 colonnes) */
+        .boutiques-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+    
+        .country-section {
+            margin-bottom: 50px;
+        }
+    
+        .country-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            /* Espace sous le soulignement */
+            margin-bottom: 20px;
+        }
+    
+        .shop-location {
+            margin-bottom: 30px;
+            line-height: 1.5;
+            font-size: 1.1rem;
+        }
+    
+        .shop-location p:first-child {
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--La barre de navigation-->
+    <header class="navbar">
+        <!-- Zone Gauche -->
+        <div class="nav-section left">
+            <a href="../index.html" class="menu-link">Acceuil</a>
+        </div>
+
+        <!-- Zone Centre (Le Logo) -->
+        <div class="nav-section center">
+            <a href="../index.html" class="logo-link">
+                <h1 class="logo">Nanawax</h1>
+            </a>
+        </div>
+
+        <!-- Zone Droite -->
+        <div class="nav-section right">
+            <a href="../boutiques.html" class="cart-link">Nos boutiques</a>
+        </div>
+    </header>
+
+    <!--Les boutiques-->
+     <main class="boutiques-container">
+        <h2 class="main-title">Nos boutiques</h2>
+
+        <div class="boutiques-grid">
+            <!-- Colonne Gauche -->
+            <div class="column">
+                <section class="country-section">
+                    <h3 class="country-name">Côte d’ivoire</h3>
+                    
+                    <div class="shop-location">
+                        <p>Angré:</p>
+                        <p>Boulevard des Martyrs à 150m du glacier Les Oscars,</p>
+                        <p>+2250768795850</p>
+                    </div>
+
+                    <div class="shop-location">
+                        <p>Nanawax La Maison:</p>
+                        <p>Boulevard de Marseille, à 300m du rond-point de La Pergola,</p>
+                        <p>+2250767561872</p>
+                    </div>
+
+                    <div class="shop-location">
+                        <p>Ivoire Trade Center :</p>
+                        <p>Le centre commercial Ivoire Trade Center +2250767778642</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Colonne Droite -->
+            <div class="column">
+                <section class="country-section">
+                    <h3 class="country-name">Bénin</h3>
+                    <div class="shop-location">
+                        <p>Cotonou : Guinkomey, en face de Centrale optique</p>
+                        <p>+2290166987283</p>
+                    </div>
+                </section>
+
+                <section class="country-section">
+                    <h3 class="country-name">Sénégal</h3>
+                    <div class="shop-location">
+                        <p>Dakar : Point E, Avenue Bigaro Diop</p>
+                        <p>+221777059771</p>
+                    </div>
+                </section>
+
+                <section class="country-section">
+                    <h3 class="country-name">Togo</h3>
+                    <div class="shop-location">
+                        <p>Lomé, à 100m de la pharmacie Kodjoviakope</p>
+                        <p>+22870330909</p>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

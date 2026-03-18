@@ -1,0 +1,268 @@
+/* Styles généraux */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200;
+    /* 200 = ExtraLight */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* Rend la police fine plus nette */
+    background-color: #ffffff;
+    color: #000000;
+    padding-bottom: 40px;
+}
+
+/* --- Navigation Header --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    /* Aligne verticalement au milieu */
+    padding: 30px 5%;
+    width: 100%;
+}
+
+/* Chaque section occupe 33.33% de la largeur */
+.nav-section {
+    flex: 1;
+    display: flex;
+}
+
+/* Aligne le contenu à gauche pour la partie menu */
+.nav-section.left {
+    justify-content: flex-start;
+}
+
+/* Aligne le logo au centre exact de sa zone */
+.nav-section.center {
+    justify-content: center;
+}
+
+/* Aligne le panier à droite */
+.nav-section.right {
+    justify-content: flex-end;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: none;
+    /* Respecte la casse du logo */
+}
+
+/* On enlève le soulignement et on impose la couleur noire pour TOUS les liens du header */
+.navbar a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Le Menu et le Panier restent en ExtraLight */
+.menu-link, .cart-link {
+    font-weight: 200; /* ExtraLight */
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+/* Le Logo reste en gras (800) même s'il est maintenant un lien */
+.logo-link .logo {
+    font-weight: 800; 
+    /* Les autres styles du logo sont déjà définis plus haut dans ton CSS */
+}
+
+/* Petit effet au survol pour que l'utilisateur comprenne que c'est cliquable */
+.navbar a:hover {
+    opacity: 0.6; /* Le texte devient un peu plus clair au survol */
+}
+
+.menu-btn,
+.cart-btn {
+    font-size: 1.1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Évite que le texte revienne à la ligne */
+}
+
+/* --- Ajustement Mobile --- */
+@media (max-width: 768px) {
+    .nav-section.left {
+        display: none;
+        /* Cache le texte 'Menu' sur mobile comme sur ton image 2 */
+    }
+
+    /* Sur mobile, pour que le logo soit à gauche et le panier à droite */
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .nav-section.center {
+        justify-content: flex-start;
+        /* Aligne le logo à gauche sur mobile */
+        flex: 2;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+}
+
+
+/* --- Barre de Filtres --- */
+.category-filters {
+    padding: 0 5% 20px; /* Marges : 0 en haut, 5% côtés (comme le header), 40px en bas */
+    display: flex;
+    justify-content: flex-end; /* Aligne les filtres à droite */
+}
+
+.filter-list {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Espace entre chaque catégorie */
+}
+
+.filter-list a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.filter-list a:hover {
+    opacity: 0.5; /* Effet visuel au survol */
+}
+
+/* --- Adaptation Mobile --- */
+@media (max-width: 768px) {
+    .category-filters {
+        justify-content: center; /* Centre les filtres sur mobile */
+        padding: 0 20px 30px;
+    }
+    
+    .filter-list {
+        gap: 15px; /* On réduit l'espace sur mobile */
+        font-size: 0.9rem;
+        flex-wrap: wrap; /* Permet de passer à la ligne si l'écran est trop petit */
+        justify-content: center;
+    }
+}
+
+/* --- Grille de Produits --- */
+.content-wrapper {
+    padding: 0 5%;
+}
+
+.product-grid {
+    display: grid;
+    /* Par défaut : 4 colonnes (Desktop) */
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+}
+
+.product-card-link {
+    text-decoration: none;
+    /* Enlever le soulignement */
+    color: inherit;
+    /* Garder la couleur noire du texte */
+    display: block;
+    /* Le lien prend toute la place du bloc */
+    transition: opacity 0.3s ease;
+    /* Optionnel : petit effet au survol */
+}
+
+/* Petit effet visuel quand on survole le produit */
+.product-card-link:hover {
+    opacity: 0.8;
+    /* Le produit s'éclaircit légèrement au survol */
+}
+
+/* On s'assure que les titres dans les liens restent en ExtraLight */
+.product-name {
+    font-weight: 200;
+    /* Rappel du ExtraLight pour la cohérence */
+    margin-top: 10px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    /* Ratio portrait constant */
+    overflow: hidden;
+    margin-bottom: 4px;
+    background-color: #f5f5f5;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Typographie Produits --- */
+.product-name {
+    font-size: 1.0rem;
+    font-weight: 200;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    font-size: 1.0rem;
+    font-weight: 200;
+}
+
+/* --- RESPONSIVE (Version Mobile) --- */
+
+@media (max-width: 900px) {
+
+    /* Passage à 2 colonnes comme sur ton image mobile */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+        row-gap: 30px;
+    }
+
+    .navbar {
+        padding: 30px 5%;
+    }
+
+    .menu-label {
+        display: none;
+        /* Cacher le mot 'Menu' sur mobile pour coller au design */
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Ajustements mineurs pour très petits écrans */
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .cart-label {
+        font-size: 1rem;
+    }
+
+    .product-name,
+    .product-price {
+        font-size: 0.95rem;
+    }
+}

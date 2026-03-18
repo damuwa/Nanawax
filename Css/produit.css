@@ -1,0 +1,219 @@
+/* Styles généraux */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200; /* 200 = ExtraLight */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased; /* Rend la police fine plus nette */
+    background-color: #ffffff;
+    color: #000000;
+    padding-bottom: 40px;
+}
+
+/* --- Navigation Header --- */
+.navbar {
+    display: flex;
+    align-items: center; /* Aligne verticalement au milieu */
+    padding: 30px 5%;
+    width: 100%;
+}
+
+/* Chaque section occupe 33.33% de la largeur */
+.nav-section {
+    flex: 1; 
+    display: flex;
+}
+
+/* Aligne le contenu à gauche pour la partie menu */
+.nav-section.left {
+    justify-content: flex-start;
+}
+
+/* Aligne le logo au centre exact de sa zone */
+.nav-section.center {
+    justify-content: center;
+}
+
+/* Aligne le panier à droite */
+.nav-section.right {
+    justify-content: flex-end;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: none; /* Respecte la casse du logo */
+}
+
+.menu-btn, .cart-btn {
+    font-size: 1.1rem;
+    cursor: pointer;
+    white-space: nowrap; /* Évite que le texte revienne à la ligne */
+}
+
+/* On enlève le soulignement et on impose la couleur noire pour TOUS les liens du header */
+.navbar a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Le Menu et le Panier restent en ExtraLight */
+.menu-link, .cart-link {
+    font-weight: 200; /* ExtraLight */
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+/* Le Logo reste en gras (800) même s'il est maintenant un lien */
+.logo-link .logo {
+    font-weight: 800; 
+    /* Les autres styles du logo sont déjà définis plus haut dans ton CSS */
+}
+
+/* Petit effet au survol pour que l'utilisateur comprenne que c'est cliquable */
+.navbar a:hover {
+    opacity: 0.6; /* Le texte devient un peu plus clair au survol */
+}
+
+/* --- Ajustement Mobile --- */
+@media (max-width: 768px) {
+    .nav-section.left {
+        display: none; /* Cache le texte 'Menu' sur mobile comme sur ton image 2 */
+    }
+    
+    /* Sur mobile, pour que le logo soit à gauche et le panier à droite */
+    .navbar {
+        justify-content: space-between;
+    }
+    
+    .nav-section.center {
+        justify-content: flex-start; /* Aligne le logo à gauche sur mobile */
+        flex: 2;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+}
+
+/* --- MISE EN PAGE PRODUIT --- */
+.page-container {
+    padding: 0 5%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes sur Web */
+    gap: 60px;
+    align-items: start;
+}
+
+.product-visual img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Détails Produit */
+.product-title {
+    font-size: 1.0rem;
+    font-weight: 200;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-size: 1.0rem;
+    font-weight: 200;
+    margin-bottom: 30px;
+}
+
+.product-description {
+    font-size: 1.0rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* Sélections */
+.selection-box { margin-bottom: 35px; }
+
+.selection-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+
+.size-options { display: flex; gap: 10px; }
+
+.size-item {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+/* Bouton Principal */
+.btn-main {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid #000;
+    font-size: 1.3rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.btn-main:hover { background: #000; color: #fff; }
+
+/* Menus Web */
+.extra-details { border-top: 1px solid #000; }
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+
+@media (max-width: 850px) {
+    /* Header Mobile : Logo à gauche, pas de texte Menu */
+    .nav-section.left { display: none; }
+    .nav-section.center { justify-content: flex-start; }
+    .logo { font-size: 2rem; }
+    
+    .navbar { padding: 25px 5%; }
+
+    /* Layout : On empile les éléments */
+    .product-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .page-container { padding: 0; } /* Image bord à bord sur mobile */
+    
+    .product-info { padding: 0 5% 40px 5%; } /* Padding uniquement pour le texte */
+
+    .product-title { font-size: 2rem; }
+    .product-price { font-size: 1.4rem; }
+
+    .desktop-only { display: none; } /* On cache les éléments complexes du web */
+}
